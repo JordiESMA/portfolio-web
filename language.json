@@ -1,0 +1,103 @@
+{
+  "es": {
+    "nav_inicio": "Inicio",
+    "nav_sobreMi": "Sobre mí",
+    "nav_sobrePro": "Sobre lo profesional",
+    "nav_lenguajes": "Lenguajes",
+    "nav_habilidadesAptitudes": "Habilidades y aptitudes",
+    "nav_proyectos": "Proyectos",
+    "nav_contacto": "Contacto",
+
+    "inicio_texto": "Estudiante de DAM (Desarrollo de Aplicaciones Multiplataforma) y desarrollador en formación, actualmente en prácticas desarrollando un ERP con Velneo.",
+
+    "sobreMi_titulo": "Sobre mí",
+    "sobreMi_texto": "Soy un desarrollador junior con muchas ganas de aprender y crecer profesionalmente. Me organizo bien, me comunico con claridad y me adapto rápido a nuevos equipos y tecnologías. Me gusta entender bien un problema antes de programarlo, y disfruto tanto trabajando en equipo como afrontando retos por mi cuenta.",
+
+    "sobrePro_titulo": "Sobre lo profesional",
+    "sobrePro_texto": "Desde pequeño me atraía la lógica, y los videojuegos siempre fueron una gran pasión. Con el tiempo entendí que quería estudiar la lógica que hay detrás de todo eso, y así llegué al desarrollo de software: primero como curiosidad y ahora como profesión.",
+
+    "lenguajes_titulo": "Lenguajes",
+
+    "habilidadesAptitudes_titulo": "Habilidades y aptitudes",
+    "habilidadesAptitudes_texto": "Buena capacidad de organización y planificación, comunicación clara con el equipo, ganas de aprender constantemente, atención al detalle, resolución de problemas y facilidad para adaptarme a nuevos entornos de trabajo.",
+
+    "proyectos_titulo": "Proyectos",
+    "proyecto1_texto": "Aplicación de gestión para un taller mecánico desarrollada con Java Spring Boot, MySQL y Thymeleaf. Cuenta con tres roles (Admin, Trabajador y Cliente) para gestionar vehículos y reparaciones.",
+    "proyecto2_texto": "Próximamente: nuevo proyecto con Laravel y Bootstrap.",
+    "proyecto3_texto": "Proyecto final de curso en Java: un juego de rol al estilo DragonQuest con monstruos, cofres y sistema de armas. Aplica interfaces, herencia y programación orientada a objetos.",
+    "proyecto4_texto": "Buscador de jugadores de EA FC 26 desarrollado en JavaScript, con filtrado dinámico por liga y club, paginación, detalle de jugador y guardado de favoritos con localStorage.",
+
+    "contacto_titulo": "Contacto",
+    "contacto_email": "estiradojordi@gmail.com",
+    "contacto_linkedin": "LinkedIn",
+    "contacto_github": "GitHub"
+  },
+
+  "en": {
+    "nav_inicio": "Home",
+    "nav_sobreMi": "About me",
+    "nav_sobrePro": "Professional background",
+    "nav_lenguajes": "Languages",
+    "nav_habilidadesAptitudes": "Skills",
+    "nav_proyectos": "Projects",
+    "nav_contacto": "Contact",
+
+    "inicio_texto": "DAM (Multiplatform Application Development) student and developer in training, currently interning building an ERP with Velneo.",
+
+    "sobreMi_titulo": "About me",
+    "sobreMi_texto": "I'm a junior developer eager to keep learning and growing professionally. I'm well organized, communicate clearly, and adapt quickly to new teams and technologies. I like to fully understand a problem before coding it, and enjoy both teamwork and tackling challenges on my own.",
+
+    "sobrePro_titulo": "Professional background",
+    "sobrePro_texto": "Since I was a kid I was drawn to logic, and video games were always a big passion of mine. Over time I realized I wanted to study the logic behind them, which led me to software development: first as curiosity, now as a profession.",
+
+    "lenguajes_titulo": "Languages",
+
+    "habilidadesAptitudes_titulo": "Skills",
+    "habilidadesAptitudes_texto": "Strong organization and planning skills, clear communication with the team, constant eagerness to learn, attention to detail, problem-solving, and quick adaptation to new work environments.",
+
+    "proyectos_titulo": "Projects",
+    "proyecto1_texto": "Mechanic shop management application built with Java Spring Boot, MySQL and Thymeleaf. Includes three roles (Admin, Worker and Client) to manage vehicles and repairs.",
+    "proyecto2_texto": "Coming soon: new project with Laravel and Bootstrap.",
+    "proyecto3_texto": "End-of-course project in Java: a DragonQuest-style RPG with monsters, chests and a weapon system. Applies interfaces, inheritance and object-oriented programming.",
+    "proyecto4_texto": "EA FC 26 player search tool built in JavaScript, with dynamic filtering by league and club, pagination, player detail view and favorites saved with localStorage.",
+
+    "contacto_titulo": "Contact",
+    "contacto_email": "estiradojordi@gmail.com",
+    "contacto_linkedin": "LinkedIn",
+    "contacto_github": "GitHub"
+  },
+
+  "ca": {
+    "nav_inicio": "Inici",
+    "nav_sobreMi": "Sobre mi",
+    "nav_sobrePro": "Sobre el professional",
+    "nav_lenguajes": "Llenguatges",
+    "nav_habilidadesAptitudes": "Habilitats i aptituds",
+    "nav_proyectos": "Projectes",
+    "nav_contacto": "Contacte",
+
+    "inicio_texto": "Estudiant de DAM (Desenvolupament d'Aplicacions Multiplataforma) i desenvolupador en formació, actualment fent pràctiques desenvolupant un ERP amb Velneo.",
+
+    "sobreMi_titulo": "Sobre mi",
+    "sobreMi_texto": "Sóc un desenvolupador júnior amb moltes ganes d'aprendre i créixer professionalment. Em sé organitzar bé, em comunico amb claredat i m'adapto ràpid a nous equips i tecnologies. M'agrada entendre bé un problema abans de programar-lo, i gaudeixo tant treballant en equip com afrontant reptes pel meu compte.",
+
+    "sobrePro_titulo": "Sobre el professional",
+    "sobrePro_texto": "Des de petit m'atreia la lògica, i els videojocs sempre van ser una gran passió. Amb el temps vaig entendre que volia estudiar la lògica que hi ha al darrere de tot això, i així vaig arribar al desenvolupament de programari: primer com a curiositat i ara com a professió.",
+
+    "lenguajes_titulo": "Llenguatges",
+
+    "habilidadesAptitudes_titulo": "Habilitats i aptituds",
+    "habilidadesAptitudes_texto": "Bona capacitat d'organització i planificació, comunicació clara amb l'equip, ganes constants d'aprendre, atenció al detall, resolució de problemes i facilitat per adaptar-me a nous entorns de treball.",
+
+    "proyectos_titulo": "Projectes",
+    "proyecto1_texto": "Aplicació de gestió per a un taller mecànic desenvolupada amb Java Spring Boot, MySQL i Thymeleaf. Compta amb tres rols (Admin, Treballador i Client) per gestionar vehicles i reparacions.",
+    "proyecto2_texto": "Properament: nou projecte amb Laravel i Bootstrap.",
+    "proyecto3_texto": "Projecte final de curs en Java: un joc de rol a l'estil DragonQuest amb monstres, cofres i sistema d'armes. Aplica interfícies, herència i programació orientada a objectes.",
+    "proyecto4_texto": "Cercador de jugadors d'EA FC 26 desenvolupat en JavaScript, amb filtratge dinàmic per lliga i club, paginació, detall de jugador i desat de favorits amb localStorage.",
+
+    "contacto_titulo": "Contacte",
+    "contacto_email": "estiradojordi@gmail.com",
+    "contacto_linkedin": "LinkedIn",
+    "contacto_github": "GitHub"
+  }
+}
