@@ -5,7 +5,7 @@ let datos = {};
 let idiomaActual = localStorage.getItem('idioma') || 'es';
 
 // Cargamos el archivo language.json (contiene las traducciones)
-fetch('language.json')
+fetch('../../language.json')
   .then(res => res.json()) // convertimos la respuesta a objeto JS
   .then(json => {
     datos = json; // guardamos todo el JSON en la variable datos
