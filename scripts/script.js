@@ -16,8 +16,6 @@ fetch('../../language.json')
   .catch(err => console.error('Error cargando language.json:', err));
 
 
-
-
 // Función que rellena el HTML con los textos del idioma indicado
 function aplicarIdioma(idioma) {
 
@@ -42,3 +40,37 @@ function aplicarIdioma(idioma) {
   const selector = document.getElementById('idiomaSelect');
   if (selector) selector.value = idioma;
 }
+
+
+// Cuando el usuario cambia el select de idioma, aplicamos el nuevo idioma
+document.getElementById('idiomaSelect')?.addEventListener('change', (e) => {
+  aplicarIdioma(e.target.value);
+});
+
+
+// ---- MENÚ HAMBURGUESA ----
+
+const menuBtn = document.getElementById('menuBtn');
+const sideMenu = document.getElementById('sideMenu');
+const overlay = document.getElementById('overlay');
+const closeMenuBtn = document.getElementById('closeMenuBtn');
+
+// función para cerrar el menú (quita las clases activas)
+function cerrarMenu() {
+  sideMenu?.classList.remove('open');
+  overlay?.classList.remove('active');
+  menuBtn?.classList.remove('open');
+}
+
+// al pulsar el botón hamburguesa, abrimos o cerramos el menú
+menuBtn?.addEventListener('click', () => {
+  sideMenu?.classList.toggle('open');
+  overlay?.classList.toggle('active');
+  menuBtn?.classList.toggle('open');
+});
+
+// si el usuario clica fuera del menú (overlay), lo cerramos
+overlay?.addEventListener('click', cerrarMenu);
+
+// al pulsar el botón de cerrar (✕), lo cerramos también
+closeMenuBtn?.addEventListener('click', cerrarMenu);
