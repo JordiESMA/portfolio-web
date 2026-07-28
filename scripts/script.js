@@ -56,16 +56,19 @@ const overlay = document.getElementById('overlay');
 const closeMenuBtn = document.getElementById('closeMenuBtn');
 
 // función para cerrar el menú (quita las clases activas)
+//? sirve para decirle que si no existe lo ignore y haga el codigo
+//si en el html ve alguna clase que sea asi seguira el codigo si no no lo hara
+
 function cerrarMenu() {
   sideMenu?.classList.remove('open');
-  overlay?.classList.remove('active');
+  overlay?.classList.remove('open');
   menuBtn?.classList.remove('open');
 }
 
 // al pulsar el botón hamburguesa, abrimos o cerramos el menú
 menuBtn?.addEventListener('click', () => {
   sideMenu?.classList.toggle('open');
-  overlay?.classList.toggle('active');
+  overlay?.classList.toggle('open');
   menuBtn?.classList.toggle('open');
 });
 
