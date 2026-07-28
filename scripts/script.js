@@ -61,14 +61,14 @@ const closeMenuBtn = document.getElementById('closeMenuBtn');
 
 function cerrarMenu() {
   sideMenu?.classList.remove('open');
-  overlay?.classList.remove('open');
+  overlay?.classList.remove('active');
   menuBtn?.classList.remove('open');
 }
 
 // al pulsar el botón hamburguesa, abrimos o cerramos el menú
 menuBtn?.addEventListener('click', () => {
   sideMenu?.classList.toggle('open');
-  overlay?.classList.toggle('open');
+  overlay?.classList.toggle('active');
   menuBtn?.classList.toggle('open');
 });
 
