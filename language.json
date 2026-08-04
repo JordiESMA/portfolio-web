@@ -1,32 +1,18 @@
 {
   "es": {
-    "nav_inicio": "Inicio",
-    "nav_sobreMi": "Sobre mí",
-    "nav_sobrePro": "Sobre lo profesional",
-    "nav_lenguajes": "Lenguajes",
-    "nav_habilidadesAptitudes": "Habilidades y aptitudes",
-    "nav_proyectos": "Proyectos",
-    "nav_contacto": "Contacto",
-
     "inicio_texto": "Estudiante de DAM (Desarrollo de Aplicaciones Multiplataforma) y desarrollador en formación, actualmente en prácticas desarrollando un ERP con Velneo.",
-
     "sobreMi_titulo": "Sobre mí",
-    "sobreMi_texto": "Soy un desarrollador junior con muchas ganas de aprender y crecer profesionalmente. Me organizo bien, me comunico con claridad y me adapto rápido a nuevos equipos y tecnologías. Me gusta entender bien un problema antes de programarlo, y disfruto tanto trabajando en equipo como afrontando retos por mi cuenta.",
-
+    "sobreMi_texto": "Soy Jordi, y me define una cosa sobre todo: no me conformo con que algo funcione, quiero entender por qué funciona. Esa curiosidad me lleva a desmontar cada problema antes de escribir la primera línea de código. Me organizo bien, me comunico con claridad, y me adapto rápido a equipos y tecnologías nuevas — algo que ya he demostrado en prácticas reales, no solo en teoría.",
     "sobrePro_titulo": "Sobre lo profesional",
-    "sobrePro_texto": "Desde pequeño me atraía la lógica, y los videojuegos siempre fueron una gran pasión. Con el tiempo entendí que quería estudiar la lógica que hay detrás de todo eso, y así llegué al desarrollo de software: primero como curiosidad y ahora como profesión.",
-
+    "sobrePro_texto": "Todo empezó con los videojuegos: quería entender qué había detrás de esos mundos que tanto disfrutaba. Esa curiosidad se convirtió en pasión por la lógica, y la pasión en la carrera que estoy construyendo ahora. Sigo con la misma mentalidad de siempre: cada proyecto es una excusa para aprender algo nuevo, y cada línea de código, una forma de demostrarlo.",
     "lenguajes_titulo": "Lenguajes",
-
     "habilidadesAptitudes_titulo": "Habilidades y aptitudes",
     "habilidadesAptitudes_texto": "Buena capacidad de organización y planificación, comunicación clara con el equipo, ganas de aprender constantemente, atención al detalle, resolución de problemas y facilidad para adaptarme a nuevos entornos de trabajo.",
-
     "proyectos_titulo": "Proyectos",
-    "proyecto1_texto": "Aplicación de gestión para un taller mecánico desarrollada con Java Spring Boot, MySQL y Thymeleaf. Cuenta con tres roles (Admin, Trabajador y Cliente) para gestionar vehículos y reparaciones.",
-    "proyecto2_texto": "Próximamente: nuevo proyecto con Laravel y Bootstrap.",
-    "proyecto3_texto": "Proyecto final de curso en Java: un juego de rol al estilo DragonQuest con monstruos, cofres y sistema de armas. Aplica interfaces, herencia y programación orientada a objetos.",
-    "proyecto4_texto": "Buscador de jugadores de EA FC 26 desarrollado en JavaScript, con filtrado dinámico por liga y club, paginación, detalle de jugador y guardado de favoritos con localStorage.",
-
+    "proyecto1_texto": "Proyecto final de curso en Java: un juego de rol al estilo DragonQuest con monstruos, cofres y sistema de armas. Aplica interfaces, herencia y programación orientada a objetos.",
+    "proyecto2_texto": "Buscador de jugadores de EA FC 26 desarrollado en JavaScript, con filtrado dinámico por liga y club, paginación, detalle de jugador y guardado de favoritos con localStorage.",
+    "proyecto3_badge": "En construcción",
+    "proyecto3_texto": "Sistema de gestión completa para taller mecánico, construido con React, Java Spring Boot, PostgreSQL y JWT. Actualmente en desarrollo — vuelve pronto para ver el avance.",
     "contacto_titulo": "Contacto",
     "contacto_email": "Mandar correo",
     "contacto_linkedin": "LinkedIn",
@@ -34,33 +20,19 @@
   },
 
   "en": {
-    "nav_inicio": "Home",
-    "nav_sobreMi": "About me",
-    "nav_sobrePro": "Professional background",
-    "nav_lenguajes": "Languages",
-    "nav_habilidadesAptitudes": "Skills",
-    "nav_proyectos": "Projects",
-    "nav_contacto": "Contact",
-
     "inicio_texto": "DAM (Multiplatform Application Development) student and developer in training, currently interning building an ERP with Velneo.",
-
     "sobreMi_titulo": "About me",
-    "sobreMi_texto": "I'm a junior developer eager to keep learning and growing professionally. I'm well organized, communicate clearly, and adapt quickly to new teams and technologies. I like to fully understand a problem before coding it, and enjoy both teamwork and tackling challenges on my own.",
-
+    "sobreMi_texto": "I'm Jordi, and one thing defines me above all: I don't settle for something just working — I want to understand why it works. That curiosity drives me to break down every problem before writing a single line of code. I'm well organized, communicate clearly, and adapt quickly to new teams and technologies — something I've already proven in real internship work, not just in theory.",
     "sobrePro_titulo": "Professional background",
-    "sobrePro_texto": "Since I was a kid I was drawn to logic, and video games were always a big passion of mine. Over time I realized I wanted to study the logic behind them, which led me to software development: first as curiosity, now as a profession.",
-
+    "sobrePro_texto": "It all started with video games: I wanted to understand what was behind the worlds I enjoyed so much. That curiosity turned into a passion for logic, and that passion into the career I'm building now. I keep the same mindset: every project is an excuse to learn something new, and every line of code, a way to prove it.",
     "lenguajes_titulo": "Languages",
-
     "habilidadesAptitudes_titulo": "Skills",
     "habilidadesAptitudes_texto": "Strong organization and planning skills, clear communication with the team, constant eagerness to learn, attention to detail, problem-solving, and quick adaptation to new work environments.",
-
     "proyectos_titulo": "Projects",
-    "proyecto1_texto": "Mechanic shop management application built with Java Spring Boot, MySQL and Thymeleaf. Includes three roles (Admin, Worker and Client) to manage vehicles and repairs.",
-    "proyecto2_texto": "Coming soon: new project with Laravel and Bootstrap.",
-    "proyecto3_texto": "End-of-course project in Java: a DragonQuest-style RPG with monsters, chests and a weapon system. Applies interfaces, inheritance and object-oriented programming.",
-    "proyecto4_texto": "EA FC 26 player search tool built in JavaScript, with dynamic filtering by league and club, pagination, player detail view and favorites saved with localStorage.",
-
+    "proyecto1_texto": "End-of-course project in Java: a DragonQuest-style RPG with monsters, chests and a weapon system. Applies interfaces, inheritance and object-oriented programming.",
+    "proyecto2_texto": "EA FC 26 player search tool built in JavaScript, with dynamic filtering by league and club, pagination, player detail view and favorites saved with localStorage.",
+    "proyecto3_badge": "In progress",
+    "proyecto3_texto": "Full management system for an auto repair shop, built with React, Java Spring Boot, PostgreSQL and JWT. Currently in development — check back soon for progress.",
     "contacto_titulo": "Contact",
     "contacto_email": "Send Mail",
     "contacto_linkedin": "LinkedIn",
@@ -68,33 +40,19 @@
   },
 
   "ca": {
-    "nav_inicio": "Inici",
-    "nav_sobreMi": "Sobre mi",
-    "nav_sobrePro": "Sobre el professional",
-    "nav_lenguajes": "Llenguatges",
-    "nav_habilidadesAptitudes": "Habilitats i aptituds",
-    "nav_proyectos": "Projectes",
-    "nav_contacto": "Contacte",
-
     "inicio_texto": "Estudiant de DAM (Desenvolupament d'Aplicacions Multiplataforma) i desenvolupador en formació, actualment fent pràctiques desenvolupant un ERP amb Velneo.",
-
     "sobreMi_titulo": "Sobre mi",
-    "sobreMi_texto": "Sóc un desenvolupador júnior amb moltes ganes d'aprendre i créixer professionalment. Em sé organitzar bé, em comunico amb claredat i m'adapto ràpid a nous equips i tecnologies. M'agrada entendre bé un problema abans de programar-lo, i gaudeixo tant treballant en equip com afrontant reptes pel meu compte.",
-
+    "sobreMi_texto": "Sóc en Jordi, i una cosa em defineix per sobre de tot: no em conformo que una cosa funcioni, vull entendre per què funciona. Aquesta curiositat em porta a desmuntar cada problema abans d'escriure la primera línia de codi. Em sé organitzar bé, em comunico amb claredat i m'adapto ràpid a nous equips i tecnologies — cosa que ja he demostrat en pràctiques reals, no només en teoria.",
     "sobrePro_titulo": "Sobre el professional",
-    "sobrePro_texto": "Des de petit m'atreia la lògica, i els videojocs sempre van ser una gran passió. Amb el temps vaig entendre que volia estudiar la lògica que hi ha al darrere de tot això, i així vaig arribar al desenvolupament de programari: primer com a curiositat i ara com a professió.",
-
+    "sobrePro_texto": "Tot va començar amb els videojocs: volia entendre què hi havia darrere d'aquells mons que tant gaudia. Aquesta curiositat es va convertir en passió per la lògica, i la passió en la carrera que estic construint ara. Mantinc la mateixa mentalitat: cada projecte és una excusa per aprendre alguna cosa nova, i cada línia de codi, una manera de demostrar-ho.",
     "lenguajes_titulo": "Llenguatges",
-
     "habilidadesAptitudes_titulo": "Habilitats i aptituds",
     "habilidadesAptitudes_texto": "Bona capacitat d'organització i planificació, comunicació clara amb l'equip, ganes constants d'aprendre, atenció al detall, resolució de problemes i facilitat per adaptar-me a nous entorns de treball.",
-
     "proyectos_titulo": "Projectes",
-    "proyecto1_texto": "Aplicació de gestió per a un taller mecànic desenvolupada amb Java Spring Boot, MySQL i Thymeleaf. Compta amb tres rols (Admin, Treballador i Client) per gestionar vehicles i reparacions.",
-    "proyecto2_texto": "Properament: nou projecte amb Laravel i Bootstrap.",
-    "proyecto3_texto": "Projecte final de curs en Java: un joc de rol a l'estil DragonQuest amb monstres, cofres i sistema d'armes. Aplica interfícies, herència i programació orientada a objectes.",
-    "proyecto4_texto": "Cercador de jugadors d'EA FC 26 desenvolupat en JavaScript, amb filtratge dinàmic per lliga i club, paginació, detall de jugador i desat de favorits amb localStorage.",
-
+    "proyecto1_texto": "Projecte final de curs en Java: un joc de rol a l'estil DragonQuest amb monstres, cofres i sistema d'armes. Aplica interfícies, herència i programació orientada a objectes.",
+    "proyecto2_texto": "Cercador de jugadors d'EA FC 26 desenvolupat en JavaScript, amb filtratge dinàmic per lliga i club, paginació, detall de jugador i desat de favorits amb localStorage.",
+    "proyecto3_badge": "En construcció",
+    "proyecto3_texto": "Sistema de gestió completa per a un taller mecànic, construït amb React, Java Spring Boot, PostgreSQL i JWT. Actualment en desenvolupament — torna aviat per veure l'avenç.",
     "contacto_titulo": "Contacte",
     "contacto_email": "Manar correu",
     "contacto_linkedin": "LinkedIn",
