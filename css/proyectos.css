@@ -1,0 +1,43 @@
+:root {
+  --bg: #141419;
+  --panel: #1e1e26;
+  --line: #333342;
+  --pink: #ff7eb6;
+  --purple: #a980f7;
+  --text: #e0def4;
+  --text-dim: #908caa;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: 'JetBrains Mono', monospace; }
+
+/* Barra superior */
+.topbar { display: flex; justify-content: space-between; padding: 15px 20px; border-bottom: 1px solid var(--line); }
+.btn-volver { color: var(--pink); text-decoration: none; font-size: 14px; }
+#filtroLenguaje { background: var(--panel); color: var(--pink); border: 1px solid var(--line); padding: 5px 10px; border-radius: 4px; }
+
+/* Contenedor principal */
+main.main-proyectos { max-width: 700px; margin: 40px auto; padding: 0 20px; }
+h2 { color: var(--purple); font-size: 14px; text-transform: uppercase; border-bottom: 1px solid var(--line); padding-bottom: 10px; margin-bottom: 20px; }
+
+/* Cajas de los proyectos */
+.proyectos-grid { display: flex; flex-direction: column; gap: 15px; }
+.proyecto { background: var(--panel); border: 1px solid var(--line); padding: 15px; border-radius: 6px; display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; }
+.proyecto h3 { font-size: 15px; margin-bottom: 5px; }
+.proyecto p { font-size: 13px; color: var(--text-dim); line-height: 1.5; }
+
+/* Botón "Ver" de cada proyecto */
+.proyecto > a { background: var(--pink); color: var(--bg); font-size: 12px; font-weight: bold; text-decoration: none; padding: 6px 12px; border-radius: 4px; }
+
+/* Etiquetas de lenguajes (Tags) */
+.tags-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.badge-construccion { color: var(--pink); border: 1px solid var(--pink); padding: 2px 8px; font-size: 10px; border-radius: 10px; }
+
+/* Mensaje vacío (oculto por defecto) */
+.mensaje-vacio { text-align: center; color: var(--text-dim); padding: 40px; border: 1px dashed var(--line); border-radius: 6px; }
+.oculto { display: none !important; }
+
+/* Móviles */
+@media(max-width: 600px) {
+  .proyecto { flex-direction: column; }
+}

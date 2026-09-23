@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jordi Estirado Martínez — Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
@@ -40,22 +37,8 @@
 
       <section id="lenguajes" class="seccion">
         <h2 data-idioma="lenguajes_titulo"></h2>
-        <div class="skills-carrusel">
-          <div class="skills-track">
-            <div class="skill">Java</div>
-            <div class="skill">PHP</div>
-            <div class="skill">JavaScript</div>
-            <div class="skill">HTML</div>
-            <div class="skill">CSS</div>
-            <div class="skill">SQL</div>
-            <div class="skill">Java</div>
-            <div class="skill">PHP</div>
-            <div class="skill">JavaScript</div>
-            <div class="skill">HTML</div>
-            <div class="skill">CSS</div>
-            <div class="skill">SQL</div>
-          </div>
-        </div>
+        <!-- Contenedor vacío: el JS inyectará las categorías y los carruseles aquí -->
+        <div id="skills-container"></div>
       </section>
 
       <section id="habilidadesAptitudes" class="seccion">
@@ -85,10 +68,7 @@
             <div>
               <h3>
                 Mini API con Spring
-                <span
-                  class="badge-construccion"
-                  data-idioma="proyecto3_badge"
-                ></span>
+                <span class="badge-construccion" data-idioma="proyecto3_badge"></span>
               </h3>
               <p data-idioma="proyecto3_texto"></p>
             </div>
@@ -99,26 +79,9 @@
       <section id="contacto" class="seccion">
         <h2 data-idioma="contacto_titulo"></h2>
         <ul class="contacto-list">
-          <li>
-            <a
-              href="mailto:estiradojordi@gmail.com"
-              data-idioma="contacto_email"
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/jordiestiradomartinez/"
-              target="_blank"
-              data-idioma="contacto_linkedin"
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/JordiESMA"
-              target="_blank"
-              data-idioma="contacto_github"
-            ></a>
-          </li>
+          <li><a href="mailto:estiradojordi@gmail.com" data-idioma="contacto_email"></a></li>
+          <li><a href="https://www.linkedin.com/in/jordiestiradomartinez/" target="_blank" data-idioma="contacto_linkedin"></a></li>
+          <li><a href="https://github.com/JordiESMA" target="_blank" data-idioma="contacto_github"></a></li>
         </ul>
       </section>
 

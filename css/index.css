@@ -1,168 +1,209 @@
-:root{
-  --bg:#0b0e0a;
-  --panel:#111511;
-  --line:#1f2a1c;
-  --green:#4fe37a;
-  --green-dim:#2f8a4f;
-  --amber:#e3b04f;
-  --text:#c9d6c9;
-  --text-dim:#6f7d6f;
+:root {
+  /* Fondo oscuro tipo Obsidian */
+  --bg: #141419;
+  --panel: #1e1e26;
+  --line: #333342;
+  
+  /* Acentos en Rosas y Lilas */
+  --pink: #ff7eb6;
+  --pink-dim: #d05c93;
+  --purple: #a980f7;
+  
+  /* Textos */
+  --text: #e0def4;
+  --text-dim: #908caa;
 }
-*{box-sizing:border-box;margin:0;padding:0;}
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:'JetBrains Mono',monospace;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
 }
 
 /* HEADER / IDIOMA */
-.topbar{
-  display:flex;
-  justify-content:flex-end;
-  align-items:center;
-  padding:16px 24px;
-  border-bottom:1px solid var(--line);
-  position:sticky;
-  top:0;
-  background:var(--bg);
-  z-index:10;
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 10;
 }
-#idiomaSelect{
-  background:var(--panel);
-  color:var(--green);
-  border:1px solid var(--line);
-  font-family:inherit;
-  font-size:12px;
-  padding:6px 10px;
-  border-radius:4px;
-  cursor:pointer;
+#idiomaSelect {
+  background: var(--panel);
+  color: var(--pink);
+  border: 1px solid var(--line);
+  font-family: inherit;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+}
+#idiomaSelect:focus {
+  border-color: var(--purple);
 }
 
-main{max-width:760px;margin:0 auto;padding:0 24px;}
+main { max-width: 760px; margin: 0 auto; padding: 0 24px; }
 
 /* HERO */
-.hero{
-  padding:60px 0 48px;
-  text-align:left;
+.hero {
+  padding: 60px 0 48px;
+  text-align: left;
 }
-.hero img{
-  width:96px;height:96px;
-  border-radius:50%;
-  object-fit:cover;
-  border:2px solid var(--green-dim);
-  margin-bottom:20px;
+.hero img {
+  width: 96px; height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--purple);
+  margin-bottom: 20px;
 }
-.prompt{color:var(--green-dim);font-size:13px;margin-bottom:8px;}
-.hero h1{font-size:28px;color:var(--text);margin-bottom:10px;}
-.hero p{color:var(--text-dim);font-size:14px;line-height:1.7;max-width:560px;}
+.prompt { color: var(--purple); font-size: 13px; margin-bottom: 8px; }
+.hero h1 { font-size: 28px; color: var(--text); margin-bottom: 10px; }
+.hero p { color: var(--text-dim); font-size: 14px; line-height: 1.7; max-width: 560px; }
 
-section.seccion{
-  margin-bottom:44px;
-  padding-top:24px;
+/* SECCIONES (Títulos y textos) */
+section.seccion {
+  margin-bottom: 44px;
+  padding-top: 24px;
 }
-section.seccion h2{
-  font-size:13px;
-  text-transform:uppercase;
-  letter-spacing:1px;
-  color:var(--amber);
-  margin-bottom:14px;
-  padding-bottom:8px;
-  border-bottom:1px solid var(--line);
+section.seccion h2 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--purple);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
 }
-section.seccion p{
-  font-size:14px;
-  line-height:1.8;
-  color:var(--text);
-  max-width:600px;
+section.seccion p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text);
+  max-width: 600px;
 }
 
-/* LENGUAJES CARRUSEL */
-.skills-carrusel{overflow:hidden;margin-top:4px;}
-.skills-track{display:flex;width:max-content;animation:scroll 14s linear infinite;}
-.skills-track:hover{animation-play-state:paused;}
-.skill{
-  display:flex;align-items:center;
-  padding:9px 16px;margin-right:10px;
-  border:1px solid var(--line);border-radius:4px;
-  font-size:13px;color:var(--green);
-  background:var(--panel);
-  white-space:nowrap;
+/* --- LENGUAJES (Estáticos y Centrados) --- */
+#skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px; 
+  margin-top: 10px;
 }
-@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.skills-bloque {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra todo el bloque */
+}
+.skills-bloque h3 {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-bottom: 14px;
+  text-align: center; 
+}
+.skills-track {
+  display: flex;
+  flex-wrap: wrap; /* Si no caben en una línea, bajan a la siguiente ordenadamente */
+  justify-content: center; /* Centra los logos */
+  gap: 16px;
+  width: 100%;
+}
+img.skill {
+  height: 32px; 
+  width: auto;
+  border-radius: 4px;
+  display: block;
+  transition: transform 0.2s ease; 
+}
+img.skill:hover {
+  transform: translateY(-4px); /* Pequeño salto al pasar el ratón */
+}
 
 /* PROYECTOS */
-.proyectos-grid{display:flex;flex-direction:column;gap:14px;margin-top:4px;}
-.proyecto{
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:6px;
-  padding:18px 22px;
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap:16px;
-  transition:border-color .15s;
+.proyectos-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 4px; }
+.proyecto {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  transition: border-color .2s ease, transform .2s ease;
 }
-.proyecto:hover{border-color:var(--green-dim);}
-.proyecto h3{font-size:15px;color:var(--text);margin-bottom:6px;}
-.proyecto p{font-size:13px;color:var(--text-dim);line-height:1.6;max-width:440px;}
-.proyecto a{
-  flex-shrink:0;
-  color:var(--bg);background:var(--green);
-  font-size:12px;font-weight:700;
-  text-decoration:none;
-  padding:8px 14px;border-radius:4px;
-  white-space:nowrap;
+.proyecto:hover {
+  border-color: var(--purple);
+  transform: translateY(-2px);
 }
-.proyecto a:hover{background:var(--amber);}
-.proyecto-construccion{opacity:0.75;border-style:dashed;}
-.badge-construccion{
-  display:inline-block;
-  font-size:10px;
-  font-weight:400;
-  color:var(--amber);
-  border:1px solid var(--amber);
-  padding:2px 8px;
-  border-radius:10px;
-  margin-left:8px;
-  vertical-align:middle;
+.proyecto h3 { font-size: 15px; color: var(--text); margin-bottom: 6px; }
+.proyecto p { font-size: 13px; color: var(--text-dim); line-height: 1.6; max-width: 440px; }
+.proyecto a {
+  flex-shrink: 0;
+  color: var(--bg);
+  background: var(--pink);
+  font-size: 12px; font-weight: 700;
+  text-decoration: none;
+  padding: 8px 14px; border-radius: 4px;
+  white-space: nowrap;
+  transition: background .2s ease;
+}
+.proyecto a:hover { background: var(--purple); }
+
+.proyecto-construccion { opacity: 0.75; border-style: dashed; }
+.badge-construccion {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--pink);
+  border: 1px solid var(--pink);
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 8px;
+  vertical-align: middle;
 }
 
-/* CONTACTO */
-.contacto-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:4px;}
-.contacto-list a{
-  color:var(--green-dim);
-  text-decoration:none;
-  font-size:14px;
-}
-.contacto-list a:hover{color:var(--green);}
-
-footer{
-  text-align:center;
-  padding:32px 0 48px;
-  font-size:12px;
-  color:var(--text-dim);
-}
-
-@media(max-width:600px){
-  .proyecto{flex-direction:column;}
-}
-/*BOTON DE LA PAGINA DE PROYECTOS */
 #proyectos > a {
   display: inline-block;
   color: var(--bg);
-  background: var(--green);
+  background: var(--pink);
   font-size: 12px;
   font-weight: 700;
   text-decoration: none;
   padding: 8px 14px;
   border-radius: 4px;
   margin-bottom: 16px;
+  transition: background .2s ease;
 }
 #proyectos > a:hover {
-  background: var(--amber);
+  background: var(--purple);
 }
 #proyectos button {
   all: unset;
   cursor: pointer;
+}
+
+/* CONTACTO */
+.contacto-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+.contacto-list a {
+  color: var(--pink-dim);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color .2s ease;
+}
+.contacto-list a:hover { color: var(--pink); }
+
+footer {
+  text-align: center;
+  padding: 32px 0 48px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+@media(max-width:600px) {
+  .proyecto { flex-direction: column; }
 }

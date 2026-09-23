@@ -1,0 +1,51 @@
+[
+  {
+    "categoria": "Lenguajes",
+    "tecnologias": [
+      { "nombre": "Java", "badge": "https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" },
+      { "nombre": "PHP", "badge": "https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white" },
+      { "nombre": "JavaScript", "badge": "https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" }
+    ]
+  },
+  {
+    "categoria": "Frameworks",
+    "tecnologias": [
+      { "nombre": "Laravel", "badge": "https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white" },
+      { "nombre": "Astro", "badge": "https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white" },
+      { "nombre": "Bootstrap", "badge": "https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white" },
+      { "nombre": "Blade", "badge": "https://img.shields.io/badge/Laravel%20Blade-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" }
+    ]
+  },
+  {
+    "categoria": "Backend",
+    "tecnologias": [
+      { "nombre": "Spring Boot", "badge": "https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white" },
+      { "nombre": "REST APIs", "badge": "https://img.shields.io/badge/REST%20API-005571?style=for-the-badge&logo=json&logoColor=white" }
+    ]
+  },
+  {
+    "categoria": "Frontend",
+    "tecnologias": [
+      { "nombre": "HTML", "badge": "https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" },
+      { "nombre": "CSS", "badge": "https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" },
+      { "nombre": "JavaScript", "badge": "https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" },
+      { "nombre": "Thymeleaf", "badge": "https://img.shields.io/badge/Thymeleaf-%23005C0F.svg?style=for-the-badge&logo=Thymeleaf&logoColor=white" }
+    ]
+  },
+  {
+    "categoria": "Bases de datos",
+    "tecnologias": [
+      { "nombre": "MySQL", "badge": "https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white" },
+      { "nombre": "PostgreSQL", "badge": "https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white" },
+      { "nombre": "PL/SQL", "badge": "https://img.shields.io/badge/PL/SQL-F80000?style=for-the-badge&logo=oracle&logoColor=white" }
+    ]
+  },
+  {
+    "categoria": "Herramientas",
+    "tecnologias": [
+      { "nombre": "Git", "badge": "https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" },
+      { "nombre": "VS Code", "badge": "https://img.shields.io/badge/VS%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white" },
+      { "nombre": "Postman", "badge": "https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" }
+    ]
+  }
+]

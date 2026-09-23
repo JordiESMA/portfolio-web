@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todos los Proyectos</title>
+  <link rel="stylesheet" href="../css/proyectos.css" />
+</head>
+<body>
+  <div class="topbar">
+    <a href="../index.html" class="btn-volver">← Volver al inicio</a>
+    
+    <select id="filtroLenguaje">
+      <option value="todos">Todos los lenguajes</option>
+    </select>
+  </div>
+
+  <main class="main-proyectos">
+    <section class="seccion">
+      <h2>Repositorio de Proyectos</h2>
+      
+      <div id="proyectos-container" class="proyectos-grid"></div>
+
+      <!-- El mensaje oculto ahora usa clases -->
+      <div id="mensaje-vacio" class="mensaje-vacio oculto">
+        <p>>_ No hay proyectos registrados con ese lenguaje.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="../scripts/proyectos.js"></script>
+</body>
+</html>
