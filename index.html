@@ -1,105 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jordi Estirado Martínez — Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/index.css">
-</head>
-<body>
-
-<div class="topbar">
-  <select id="idiomaSelect">
-    <option value="es">Castellano</option>
-    <option value="en">English</option>
-    <option value="ca">Català</option>
-  </select>
-</div>
-
-<main>
-
-  <section class="hero">
-    <img src="images/cv.jpeg" alt="Jordi Estirado Martínez">
-    <div class="prompt">jordi@dam:~$ whoami</div>
-    <h1>Jordi Estirado Martínez</h1>
-    <p data-idioma="inicio_texto"></p>
-  </section>
-
-  <section id="sobreMi" class="seccion">
-    <h2 data-idioma="sobreMi_titulo"></h2>
-    <p data-idioma="sobreMi_texto"></p>
-  </section>
-
-  <section id="sobrePro" class="seccion">
-    <h2 data-idioma="sobrePro_titulo"></h2>
-    <p data-idioma="sobrePro_texto"></p>
-  </section>
-
-  <section id="lenguajes" class="seccion">
-    <h2 data-idioma="lenguajes_titulo"></h2>
-    <div class="skills-carrusel">
-      <div class="skills-track">
-        <div class="skill">Java</div>
-        <div class="skill">PHP</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">HTML</div>
-        <div class="skill">CSS</div>
-        <div class="skill">SQL</div>
-        <div class="skill">Java</div>
-        <div class="skill">PHP</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">HTML</div>
-        <div class="skill">CSS</div>
-        <div class="skill">SQL</div>
-      </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jordi Estirado Martínez — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div class="topbar">
+      <select id="idiomaSelect">
+        <option value="es">Castellano</option>
+        <option value="en">English</option>
+        <option value="ca">Català</option>
+      </select>
     </div>
-  </section>
 
-  <section id="habilidadesAptitudes" class="seccion">
-    <h2 data-idioma="habilidadesAptitudes_titulo"></h2>
-    <p data-idioma="habilidadesAptitudes_texto"></p>
-  </section>
+    <main>
+      <section class="hero">
+        <img src="images/cv.jpeg" alt="Jordi Estirado Martínez" />
+        <div class="prompt">jordi@dam:~$ whoami</div>
+        <h1>Jordi Estirado Martínez</h1>
+        <p data-idioma="inicio_texto"></p>
+      </section>
 
-  <section id="proyectos" class="seccion">
-    <h2 data-idioma="proyectos_titulo"></h2>
-    <div class="proyectos-grid">
-      <div class="proyecto">
-        <div>
-          <h3>Java DragonQuest</h3>
-          <p data-idioma="proyecto1_texto"></p>
+      <section id="sobreMi" class="seccion">
+        <h2 data-idioma="sobreMi_titulo"></h2>
+        <p data-idioma="sobreMi_texto"></p>
+      </section>
+
+      <section id="sobrePro" class="seccion">
+        <h2 data-idioma="sobrePro_titulo"></h2>
+        <p data-idioma="sobrePro_texto"></p>
+      </section>
+
+      <section id="lenguajes" class="seccion">
+        <h2 data-idioma="lenguajes_titulo"></h2>
+        <div class="skills-carrusel">
+          <div class="skills-track">
+            <div class="skill">Java</div>
+            <div class="skill">PHP</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">SQL</div>
+            <div class="skill">Java</div>
+            <div class="skill">PHP</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">SQL</div>
+          </div>
         </div>
-        <a href="https://github.com/JordiESMA" target="_blank">GitHub →</a>
-      </div>
-      <div class="proyecto">
-        <div>
-          <h3>EA FC 26 Player Search</h3>
-          <p data-idioma="proyecto2_texto"></p>
+      </section>
+
+      <section id="habilidadesAptitudes" class="seccion">
+        <h2 data-idioma="habilidadesAptitudes_titulo"></h2>
+        <p data-idioma="habilidadesAptitudes_texto"></p>
+      </section>
+
+      <section id="proyectos" class="seccion">
+        <h2 data-idioma="proyectos_titulo"></h2>
+        <a href="pages/proyectos.html"><button>Ver mas detalles</button></a>
+        <div class="proyectos-grid">
+          <div class="proyecto">
+            <div>
+              <h3>Java DragonQuest</h3>
+              <p data-idioma="proyecto1_texto"></p>
+            </div>
+            <a href="https://github.com/JordiESMA" target="_blank">GitHub →</a>
+          </div>
+          <div class="proyecto">
+            <div>
+              <h3>EA FC 26 Player Search</h3>
+              <p data-idioma="proyecto2_texto"></p>
+            </div>
+            <a href="https://github.com/JordiESMA" target="_blank">GitHub →</a>
+          </div>
+          <div class="proyecto proyecto-construccion">
+            <div>
+              <h3>
+                Mini API con Spring
+                <span
+                  class="badge-construccion"
+                  data-idioma="proyecto3_badge"
+                ></span>
+              </h3>
+              <p data-idioma="proyecto3_texto"></p>
+            </div>
+          </div>
         </div>
-        <a href="https://github.com/JordiESMA" target="_blank">GitHub →</a>
-      </div>
-      <div class="proyecto proyecto-construccion">
-        <div>
-          <h3>Taller Mecánico <span class="badge-construccion" data-idioma="proyecto3_badge"></span></h3>
-          <p data-idioma="proyecto3_texto"></p>
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section id="contacto" class="seccion">
-    <h2 data-idioma="contacto_titulo"></h2>
-    <ul class="contacto-list">
-      <li><a href="mailto:estiradojordi@gmail.com" data-idioma="contacto_email"></a></li>
-      <li><a href="https://www.linkedin.com/in/jordiestiradomartinez/" target="_blank" data-idioma="contacto_linkedin"></a></li>
-      <li><a href="https://github.com/JordiESMA" target="_blank" data-idioma="contacto_github"></a></li>
-    </ul>
-  </section>
+      <section id="contacto" class="seccion">
+        <h2 data-idioma="contacto_titulo"></h2>
+        <ul class="contacto-list">
+          <li>
+            <a
+              href="mailto:estiradojordi@gmail.com"
+              data-idioma="contacto_email"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/jordiestiradomartinez/"
+              target="_blank"
+              data-idioma="contacto_linkedin"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/JordiESMA"
+              target="_blank"
+              data-idioma="contacto_github"
+            ></a>
+          </li>
+        </ul>
+      </section>
 
-  <footer>jordi@dam:~$ _</footer>
-</main>
+      <footer>jordi@dam:~$ _</footer>
+    </main>
 
-<script src="scripts/script.js"></script>
-</body>
+    <script src="scripts/script.js"></script>
+  </body>
 </html>

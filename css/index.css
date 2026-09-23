@@ -147,3 +147,22 @@ footer{
 @media(max-width:600px){
   .proyecto{flex-direction:column;}
 }
+/*BOTON DE LA PAGINA DE PROYECTOS */
+#proyectos > a {
+  display: inline-block;
+  color: var(--bg);
+  background: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+#proyectos > a:hover {
+  background: var(--amber);
+}
+#proyectos button {
+  all: unset;
+  cursor: pointer;
+}
