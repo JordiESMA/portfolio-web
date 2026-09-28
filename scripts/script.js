@@ -19,7 +19,7 @@ async function initIdioma() {
   const select = document.getElementById('idiomaSelect');
   if (!select) return; // si la página no tiene select, salimos
 
-  const idiomas = await fetchJSON('/data/language.json'); // "/" = ruta desde la raíz
+  const idiomas = await fetchJSON('data/language.json');
   const guardado = localStorage.getItem('idioma') || 'es'; // || = valor por defecto
 
   select.value = guardado;
@@ -41,7 +41,7 @@ async function loadSkills() {
   if (!container) return;
 
   try {
-    const data = await fetchJSON('/data/badgesLanguages.json');
+    const data = await fetchJSON('data/badgesLanguages.json');
 
     container.innerHTML = data
       .filter(c => c.categoria !== 'Herramientas')
@@ -69,7 +69,7 @@ async function initProyectos() {
 
   let proyectos = [];
   try {
-    proyectos = await fetchJSON('/data/proyectos.json');
+    proyectos = await fetchJSON('data/proyectos.json');
   } catch (error) {
     console.error(error);
     return;
