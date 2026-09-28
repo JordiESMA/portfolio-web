@@ -207,3 +207,6 @@ footer {
 @media(max-width:600px) {
   .proyecto { flex-direction: column; }
 }
+
+.oculto { display: none; }
+.badge-lang { border: 1px solid currentColor; padding: 0 .4rem; margin-right: .3rem; font-size: .8rem; }

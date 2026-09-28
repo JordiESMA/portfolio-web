@@ -63,3 +63,73 @@ async function loadSkills() {
 }
 
 document.addEventListener('DOMContentLoaded', loadSkills);  
+
+const misProyectos = [
+  {
+    titulo: "Java DragonQuest",
+    descripcion: "Un juego RPG de consola basado en la clásica saga.",
+    lenguajes: ["Java"],
+    link: "https://github.com/JordiESMA"
+  },
+  {
+    titulo: "EA FC 26 Player Search",
+    descripcion: "Buscador de jugadores consumiendo una API externa.",
+    lenguajes: ["JavaScript", "HTML", "CSS"],
+    link: "https://github.com/JordiESMA"
+  },
+  {
+    titulo: "Mini API con Spring",
+    descripcion: "Backend robusto para gestión de usuarios.",
+    lenguajes: ["Java", "Spring Boot", "SQL"],
+    link: "#"
+  },
+  {
+    titulo: "Portfolio Personal",
+    descripcion: "Diseño estilo Obsidian oscuro.",
+    lenguajes: ["HTML", "CSS", "JavaScript"],
+    link: "#"
+  }
+];
+
+const filtroSelect = document.getElementById("filtroLenguaje");
+const contenedor = document.getElementById("proyectos-container");
+const mensajeVacio = document.getElementById("mensaje-vacio");
+
+function cargarFiltros() {
+  const unicos = [...new Set(misProyectos.flatMap(p => p.lenguajes))].sort();
+  filtroSelect.insertAdjacentHTML(
+    "beforeend",
+    unicos.map(l => `<option value="${l}">${l}</option>`).join("")
+  );
+}
+
+function renderizar(lista) {
+  mensajeVacio.classList.toggle("oculto", lista.length > 0);
+
+  contenedor.innerHTML = lista.map(p => `
+    <div class="proyecto">
+      <div>
+        <h3>${p.titulo}</h3>
+        <p>${p.descripcion}</p>
+        <div class="tags-container">
+          ${p.lenguajes.map(l => `<span class="badge-lang">${l}</span>`).join("")}
+        </div>
+      </div>
+      ${p.link !== "#"
+        ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer">Ver →</a>`
+        : `<span class="badge-construccion">En construcción</span>`}
+    </div>
+  `).join("");
+}
+
+filtroSelect.addEventListener("change", e => {
+  const lang = e.target.value;
+  renderizar(
+    lang === "todos"
+      ? misProyectos
+      : misProyectos.filter(p => p.lenguajes.includes(lang))
+  );
+});
+
+cargarFiltros();
+renderizar(misProyectos);
