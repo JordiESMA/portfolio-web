@@ -10,8 +10,7 @@
     "categoria": "Java",
     "githubUrl": "https://github.com/JordiESMA/JAVA_DRAGONQUEST.git",
     "tecnologias": [
-      { "nombre": "Java", "badge": "https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" },
-      { "nombre": "Git", "badge": "https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" }
+      { "nombre": "Java", "badge": "https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" }
     ]
   },
   {
