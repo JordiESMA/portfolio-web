@@ -11,45 +11,62 @@ async function initProyectosPage() {
   if (!filtroSelect || !contenedor) return;
 
   let proyectos = [];
+  let idiomasData = null;
+
   try {
-    proyectos = await fetchJSON('../data/proyectos.json');
+    [proyectos, idiomasData] = await Promise.all([
+      fetchJSON('../data/proyectos.json'),
+      fetchJSON('../data/language.json')
+    ]);
   } catch (error) {
     console.error(error);
     return;
   }
 
-  // Extraer lenguajes únicos y rellenar el select
-  const unicos = [...new Set(proyectos.flatMap(p => p.lenguajes))].sort();
+  const getIdioma = () => localStorage.getItem('idioma') || 'es';
+
+  function traducir(key, fallback) {
+    const dict = idiomasData[getIdioma()];
+    return (dict && dict[key]) || fallback || '';
+  }
+
+  // Extraer categorías únicas y rellenar el select
+  const categorias = [...new Set(proyectos.map(p => p.categoria))].sort();
   filtroSelect.insertAdjacentHTML(
     'beforeend',
-    unicos.map(l => `<option value="${l}">${l}</option>`).join('')
+    categorias.map(c => `<option value="${c}">${c}</option>`).join('')
   );
 
   function render() {
-    const lang = filtroSelect.value;
-    const lista = lang === 'todos'
+    const filtro = filtroSelect.value;
+    const lista = filtro === 'todos'
       ? proyectos
-      : proyectos.filter(p => p.lenguajes.includes(lang));
+      : proyectos.filter(p => p.categoria === filtro);
 
     mensajeVacio.classList.toggle('oculto', lista.length > 0);
 
-    // Usar idioma guardado o español por defecto
-    const idioma = localStorage.getItem('idioma') || 'es';
+    contenedor.innerHTML = lista.map(p => {
+      const desc = traducir(p.descripcionKey, p.descripcionFallback);
+      const estado = traducir(p.estadoKey, p.estadoFallback);
+      const esConstruccion = p.estadoTipo === 'construccion';
 
-    contenedor.innerHTML = lista.map(p => `
-      <div class="proyecto">
+      return `
+      <div class="proyecto${esConstruccion ? ' proyecto-construccion' : ''}">
         <div>
-          <h3>${p.titulo}</h3>
-          <p>${p.descripcion[idioma] ?? p.descripcion.es}</p>
+          <h3>
+            ${p.nombre}
+            <span class="badge-estado badge-${p.estadoTipo}">${estado}</span>
+          </h3>
+          <p>${desc}</p>
           <div class="tags-container">
-            ${p.lenguajes.map(l => `<span class="badge-lang">${l}</span>`).join('')}
+            ${p.tecnologias.map(t =>
+              `<img src="${t.badge}" alt="${t.nombre}" class="badge-tech">`
+            ).join('')}
           </div>
         </div>
-        ${p.link !== '#'
-          ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer">Ver →</a>`
-          : `<span class="badge-construccion">En construcción</span>`}
-      </div>
-    `).join('');
+        <a href="${p.githubUrl}" target="_blank" rel="noopener noreferrer">GitHub →</a>
+      </div>`;
+    }).join('');
   }
 
   filtroSelect.addEventListener('change', render);

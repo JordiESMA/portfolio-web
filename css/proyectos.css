@@ -133,6 +133,40 @@ section.seccion h2 {
 }
 .oculto { display: none; }
 
+/* BADGES DE TECNOLOGÍAS */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+.badge-tech {
+  height: 24px;
+  width: auto;
+  border-radius: 4px;
+}
+
+/* BADGES DE ESTADO */
+.badge-estado {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 400;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.badge-completado {
+  color: #50fa7b;
+  border: 1px solid #50fa7b;
+}
+.badge-construccion {
+  color: var(--pink);
+  border: 1px solid var(--pink);
+}
+
+.proyecto-construccion { opacity: 0.75; border-style: dashed; }
+
 @media(max-width:600px) {
   .proyecto { flex-direction: column; }
 }

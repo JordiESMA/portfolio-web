@@ -51,15 +51,18 @@
 
       <section id="proyectos" class="seccion">
         <h2 data-idioma="proyectos_titulo"></h2>
+        <a href="pages/proyectos.html"
+          ><button data-idioma="proyectos_btn_ver">Ver más detalles acerca de los proyectos</button></a
+        >
 
-        <label for="filtroLenguaje">Filtrar por lenguaje:</label>
+        <label for="filtroLenguaje" data-idioma="proyectos_filtrar">Filtrar por categoría:</label>
         <select id="filtroLenguaje">
-          <option value="todos">Todos</option>
+          <option value="todos" data-idioma="proyectos_todos">Todos</option>
         </select>
 
         <div class="proyectos-grid" id="proyectos-container"></div>
-        <p id="mensaje-vacio" class="oculto">
-          No hay proyectos con ese lenguaje.
+        <p id="mensaje-vacio" class="oculto" data-idioma="proyectos_vacio">
+          No hay proyectos con esa categoría.
         </p>
       </section>
 

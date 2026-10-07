@@ -1,32 +1,64 @@
 [
   {
-    "titulo": "DragonQuest RPG",
-    "descripcion": {
-      "es": "Proyecto final de curso en Java: un juego de rol al estilo DragonQuest con monstruos, cofres y sistema de armas. Aplica interfaces, herencia y programación orientada a objetos.",
-      "en": "End-of-course project in Java: a DragonQuest-style RPG with monsters, chests and a weapon system. Applies interfaces, inheritance and object-oriented programming.",
-      "ca": "Projecte final de curs en Java: un joc de rol a l'estil DragonQuest amb monstres, cofres i sistema d'armes. Aplica interfícies, herència i programació orientada a objectes."
-    },
-    "lenguajes": ["Java"],
-    "link": "https://github.com/JordiESMA"
+    "id": "rpg-java",
+    "nombre": "🎮 RPG Java DragonQuest",
+    "descripcionKey": "proyecto1_texto",
+    "descripcionFallback": "Juego de rol al estilo DragonQuest con monstruos, cofres y sistema de armas. Aplica interfaces, herencia y POO.",
+    "estadoKey": "proyecto_estado_completado",
+    "estadoFallback": "Completado",
+    "estadoTipo": "completado",
+    "categoria": "Java",
+    "githubUrl": "https://github.com/JordiESMA/JAVA_DRAGONQUEST.git",
+    "tecnologias": [
+      { "nombre": "Java", "badge": "https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" },
+      { "nombre": "Git", "badge": "https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" }
+    ]
   },
   {
-    "titulo": "EA FC 26 Player Search",
-    "descripcion": {
-      "es": "Buscador de jugadores de EA FC 26 desarrollado en JavaScript, con filtrado dinámico por liga y club, paginación, detalle de jugador y guardado de favoritos con localStorage.",
-      "en": "EA FC 26 player search tool built in JavaScript, with dynamic filtering by league and club, pagination, player detail view and favorites saved with localStorage.",
-      "ca": "Cercador de jugadors d'EA FC 26 desenvolupat en JavaScript, amb filtratge dinàmic per lliga i club, paginació, detall de jugador i desat de favorits amb localStorage."
-    },
-    "lenguajes": ["JavaScript", "HTML", "CSS"],
-    "link": "https://github.com/JordiESMA"
+    "id": "buscador-fc26",
+    "nombre": "⚽ Buscador EA FC 26",
+    "descripcionKey": "proyecto2_texto",
+    "descripcionFallback": "Buscador de jugadores con filtrado dinámico por liga y club, paginación, vista detallada y favoritos con localStorage.",
+    "estadoKey": "proyecto_estado_completado",
+    "estadoFallback": "Completado",
+    "estadoTipo": "completado",
+    "categoria": "Frontend",
+    "githubUrl": "https://github.com/JordiESMA/fifaPlayers.git",
+    "tecnologias": [
+      { "nombre": "JavaScript", "badge": "https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" },
+      { "nombre": "HTML", "badge": "https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" },
+      { "nombre": "CSS", "badge": "https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" }
+    ]
   },
   {
-    "titulo": "Liga API",
-    "descripcion": {
-      "es": "Mini API sobre mi liga de fútbol, con los datos guardados en local y una vista en HTML. Actualmente en desarrollo — vuelve pronto para ver el avance.",
-      "en": "Mini API for my football league, with data stored locally and displayed via an HTML view. Currently in development — check back soon for progress.",
-      "ca": "Mini API sobre la meva lliga de futbol, amb les dades desades en local i una vista en HTML. Actualment en desenvolupament — torna aviat per veure l'avanç."
-    },
-    "lenguajes": ["PHP", "MySQL", "HTML"],
-    "link": "#"
+    "id": "portfolio-astro",
+    "nombre": "⚡ Portfolio Web Personal",
+    "descripcionKey": "proyecto_portfolio_desc",
+    "descripcionFallback": "Portfolio moderno desarrollado con Astro, TypeScript, soporte multidioma reactivo (ES, EN, CA) y tema Obsidian.",
+    "estadoKey": "proyecto_estado_completado",
+    "estadoFallback": "Completado",
+    "estadoTipo": "completado",
+    "categoria": "Frontend",
+    "githubUrl": "https://github.com/JordiESMA/astroPortfolioWeb.git",
+    "tecnologias": [
+      { "nombre": "Astro", "badge": "https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white" },
+      { "nombre": "JavaScript", "badge": "https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" },
+      { "nombre": "CSS", "badge": "https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" }
+    ]
+  },
+  {
+    "id": "liga-api",
+    "nombre": "⚡ Api gestión de liga",
+    "descripcionKey": "proyecto_liga_api",
+    "descripcionFallback": "Api de gestión de ligas de futbol (en este caso la mia).",
+    "estadoKey": "proyecto_estado_construccion",
+    "estadoFallback": "Construcción",
+    "estadoTipo": "construccion",
+    "categoria": "Backend",
+    "githubUrl": "https://github.com/JordiESMA/footballLeaugue.git",
+    "tecnologias": [
+      { "nombre": "Spring", "badge": "https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white" },
+      { "nombre": "SQL", "badge": "https://img.shields.io/badge/SQL-005C84?style=for-the-badge&logo=postgresql&logoColor=white" }
+    ]
   }
 ]
