@@ -1,3 +1,4 @@
+
 {
   "es": {
     "inicio_texto": "Estudiante de DAM (Desarrollo de Aplicaciones Multiplataforma) y desarrollador en formación, actualmente en prácticas desarrollando un ERP con Velneo.",
@@ -15,6 +16,7 @@
     "proyecto2_texto": "Buscador de jugadores de EA FC 26 desarrollado en JavaScript, con filtrado dinámico por liga y club, paginación, detalle de jugador y guardado de favoritos con localStorage.",
     "proyecto_portfolio_desc": "Portfolio moderno desarrollado con Astro, JavaScript, soporte multidioma reactivo (ES, EN, CA) y tema Obsidian.",
     "proyecto_liga_api": "Api de gestión de ligas de fútbol (en este caso la mía). Actualmente en desarrollo.",
+    "proyecto_shareticket_desc": "Aplicación Android para compartir y gestionar entradas, desarrollada con Kotlin y Jetpack Compose. Incluye autenticación de usuarios mediante Firebase y gestión de tickets.",
     "proyecto_estado_completado": "Completado",
     "proyecto_estado_construccion": "En construcción",
     "proyectos_btn_ver": "Ver más detalles acerca de los proyectos",
@@ -24,7 +26,6 @@
     "contacto_linkedin": "LinkedIn",
     "contacto_github": "GitHub"
   },
-
   "en": {
     "inicio_texto": "DAM (Multiplatform Application Development) student and developer in training, currently interning building an ERP with Velneo.",
     "sobreMi_titulo": "About me",
@@ -41,6 +42,7 @@
     "proyecto2_texto": "EA FC 26 player search tool built in JavaScript, with dynamic filtering by league and club, pagination, player detail view and favorites saved with localStorage.",
     "proyecto_portfolio_desc": "Modern portfolio built with Astro, JavaScript, reactive multilanguage support (ES, EN, CA) and Obsidian theme.",
     "proyecto_liga_api": "Football league management API (in this case, mine). Currently in development.",
+    "proyecto_shareticket_desc": "Android application for sharing and managing tickets, developed with Kotlin and Jetpack Compose. Includes Firebase user authentication and ticket management.",
     "proyecto_estado_completado": "Completed",
     "proyecto_estado_construccion": "In progress",
     "proyectos_btn_ver": "See more details about the projects",
@@ -50,7 +52,6 @@
     "contacto_linkedin": "LinkedIn",
     "contacto_github": "GitHub"
   },
-
   "ca": {
     "inicio_texto": "Estudiant de DAM (Desenvolupament d'Aplicacions Multiplataforma) i desenvolupador en formació, actualment fent pràctiques desenvolupant un ERP amb Velneo.",
     "sobreMi_titulo": "Sobre mi",
@@ -67,6 +68,7 @@
     "proyecto2_texto": "Cercador de jugadors d'EA FC 26 desenvolupat en JavaScript, amb filtratge dinàmic per lliga i club, paginació, detall de jugador i desat de favorits amb localStorage.",
     "proyecto_portfolio_desc": "Portfolio modern desenvolupat amb Astro, JavaScript, suport multiidioma reactiu (ES, EN, CA) i tema Obsidian.",
     "proyecto_liga_api": "API de gestió de lligues de futbol (en aquest cas la meva). Actualment en desenvolupament.",
+    "proyecto_shareticket_desc": "Aplicació Android per compartir i gestionar entrades, desenvolupada amb Kotlin i Jetpack Compose. Inclou autenticació d'usuaris mitjançant Firebase i gestió de tiquets.",
     "proyecto_estado_completado": "Completat",
     "proyecto_estado_construccion": "En construcció",
     "proyectos_btn_ver": "Veure més detalls sobre els projectes",
