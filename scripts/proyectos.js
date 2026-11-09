@@ -1,76 +1,130 @@
+
 async function fetchJSON(ruta) {
-  const res = await fetch(ruta);
-  if (!res.ok) throw new Error(`Error cargando ${ruta}`);
-  return res.json();
+  const respuesta = await fetch(ruta);
+
+  if (!respuesta.ok) {
+    throw new Error("Error cargando " + ruta);
+  }
+
+  return respuesta.json();
 }
 
 async function initProyectosPage() {
-  const filtroSelect  = document.getElementById('filtroLenguaje');
-  const contenedor    = document.getElementById('proyectos-container');
-  const mensajeVacio  = document.getElementById('mensaje-vacio');
+
+  const filtroSelect = document.getElementById('filtroLenguaje');
+  const contenedor = document.getElementById('proyectos-container');
+  const mensajeVacio = document.getElementById('mensaje-vacio');
+
   if (!filtroSelect || !contenedor) return;
 
-  let proyectos = [];
-  let idiomasData = null;
+  let proyectos;
+  let idiomasData;
 
   try {
-    [proyectos, idiomasData] = await Promise.all([
-      fetchJSON('../data/proyectos.json'),
-      fetchJSON('../data/language.json')
-    ]);
+    proyectos = await fetchJSON('../data/proyectos.json');
+    idiomasData = await fetchJSON('../data/language.json');
+
   } catch (error) {
-    console.error(error);
+    console.error('Error cargando los datos:', error);
     return;
   }
 
-  const getIdioma = () => localStorage.getItem('idioma') || 'es';
-
-  function traducir(key, fallback) {
-    const dict = idiomasData[getIdioma()];
-    return (dict && dict[key]) || fallback || '';
+  // Obtener el idioma seleccionado
+  function getIdioma() {
+    return localStorage.getItem('idioma') || 'es';
   }
 
-  // Extraer categorías únicas y rellenar el select
-  const categorias = [...new Set(proyectos.map(p => p.categoria))].sort();
-  filtroSelect.insertAdjacentHTML(
-    'beforeend',
-    categorias.map(c => `<option value="${c}">${c}</option>`).join('')
-  );
+  // Traducir textos
+  function traducir(clave, textoPorDefecto) {
+    const idioma = idiomasData[getIdioma()];
 
+    return idioma[clave] || textoPorDefecto || '';
+  }
+
+  // Crear las opciones del filtro
+  const categorias = [...new Set(proyectos.map(p => p.categoria))].sort();
+
+  filtroSelect.innerHTML = '<option value="todos">Todos</option>';
+
+  categorias.forEach(categoria => {
+    filtroSelect.innerHTML += `
+      <option value="${categoria}">${categoria}</option>
+    `;
+  });
+
+  // Mostrar los proyectos
   function render() {
+
     const filtro = filtroSelect.value;
+
     const lista = filtro === 'todos'
       ? proyectos
       : proyectos.filter(p => p.categoria === filtro);
 
-    mensajeVacio.classList.toggle('oculto', lista.length > 0);
+    // Mostrar mensaje si no hay proyectos
+    if (mensajeVacio) {
+      mensajeVacio.classList.toggle('oculto', lista.length > 0);
+    }
 
-    contenedor.innerHTML = lista.map(p => {
-      const desc = traducir(p.descripcionKey, p.descripcionFallback);
-      const estado = traducir(p.estadoKey, p.estadoFallback);
-      const esConstruccion = p.estadoTipo === 'construccion';
+    contenedor.innerHTML = lista.map(proyecto => {
+
+      const descripcion = traducir(
+        proyecto.descripcionKey,
+        proyecto.descripcionFallback
+      );
+
+      const estado = traducir(
+        proyecto.estadoKey,
+        proyecto.estadoFallback
+      );
+
+      const construccion = proyecto.estadoTipo === 'construccion';
 
       return `
-      <div class="proyecto${esConstruccion ? ' proyecto-construccion' : ''}">
-        <div>
-          <h3>
-            ${p.nombre}
-            <span class="badge-estado badge-${p.estadoTipo}">${estado}</span>
-          </h3>
-          <p>${desc}</p>
-          <div class="tags-container">
-            ${p.tecnologias.map(t =>
-              `<img src="${t.badge}" alt="${t.nombre}" class="badge-tech">`
-            ).join('')}
+        <div class="proyecto ${construccion ? 'proyecto-construccion' : ''}">
+
+          <div>
+            <h3>
+              ${proyecto.nombre}
+
+              <span class="badge-estado badge-${proyecto.estadoTipo}">
+                ${estado}
+              </span>
+            </h3>
+
+            <p>${descripcion}</p>
+
+            <div class="tags-container">
+              ${proyecto.tecnologias.map(tecnologia => `
+                <img
+                  src="${tecnologia.badge}"
+                  alt="${tecnologia.nombre}"
+                  class="badge-tech"
+                >
+              `).join('')}
+            </div>
           </div>
+
+          <a
+            href="${proyecto.githubUrl}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub →
+          </a>
+
         </div>
-        <a href="${p.githubUrl}" target="_blank" rel="noopener noreferrer">GitHub →</a>
-      </div>`;
+      `;
+
     }).join('');
   }
 
+  // Actualizar proyectos al cambiar el filtro
   filtroSelect.addEventListener('change', render);
+
+  // Mostrar proyectos al entrar
   render();
+
 }
 
 document.addEventListener('DOMContentLoaded', initProyectosPage);

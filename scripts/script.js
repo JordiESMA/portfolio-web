@@ -1,138 +1,201 @@
+
 async function fetchJSON(ruta) {
-  const res = await fetch(ruta);
-  if (!res.ok) throw new Error(`Error cargando ${ruta}`);
-  return res.json();
+  const respuesta = await fetch(ruta);
+
+  if (!respuesta.ok) {
+    throw new Error("Error cargando " + ruta);
+  }
+
+  return respuesta.json();
 }
 
+// Guardamos los idiomas y la función de actualizar proyectos
+let idiomasData = null;
 let renderProyectos = null;
-let idiomasData = null; // guardamos los idiomas globalmente
 
-/* ---------- IDIOMA ---------- */
+
+// -------------------- IDIOMA --------------------
+
 function getIdioma() {
   return localStorage.getItem('idioma') || 'es';
 }
 
 function traducir(key, fallback) {
   if (!idiomasData) return fallback || '';
-  const dict = idiomasData[getIdioma()];
-  return (dict && dict[key]) || fallback || '';
-}
 
-function aplicarIdioma(dict) {
-  if (!dict) return;
-  document.querySelectorAll('[data-idioma]').forEach(el => {
-    const key = el.getAttribute('data-idioma');
-    if (dict[key]) el.textContent = dict[key];
-  });
+  const idioma = idiomasData[getIdioma()];
+
+  return idioma[key] || fallback || '';
 }
 
 async function initIdioma() {
   const select = document.getElementById('idiomaSelect');
+
   if (!select) return;
 
   idiomasData = await fetchJSON('data/language.json');
-  const guardado = getIdioma();
 
-  select.value = guardado;
-  aplicarIdioma(idiomasData[guardado]);
-  document.documentElement.lang = guardado;
+  select.value = getIdioma();
 
-  select.addEventListener('change', () => {
-    const lang = select.value;
-    aplicarIdioma(idiomasData[lang]);
-    document.documentElement.lang = lang;
-    localStorage.setItem('idioma', lang);
-    if (renderProyectos) renderProyectos();
-  });
+  function cambiarIdioma() {
+    const idioma = select.value;
+
+    localStorage.setItem('idioma', idioma);
+
+    document.documentElement.lang = idioma;
+
+    const textos = idiomasData[idioma];
+
+    document.querySelectorAll('[data-idioma]').forEach(elemento => {
+      const clave = elemento.getAttribute('data-idioma');
+
+      if (textos[clave]) {
+        elemento.textContent = textos[clave];
+      }
+    });
+
+    if (renderProyectos) {
+      renderProyectos();
+    }
+  }
+
+  cambiarIdioma();
+
+  select.addEventListener('change', cambiarIdioma);
 }
 
-/* ---------- SKILLS ---------- */
+
+// -------------------- HABILIDADES --------------------
+
 async function loadSkills() {
   const container = document.getElementById('skills-container');
+
   if (!container) return;
 
   try {
-    const data = await fetchJSON('data/badgesLanguages.json');
+    const categorias = await fetchJSON('data/badgesLanguages.json');
 
-    container.innerHTML = data
-      .filter(c => c.categoria !== 'Herramientas')
-      .map(categoria => `
+    container.innerHTML = '';
+
+    categorias.forEach(categoria => {
+      const tecnologias = categoria.tecnologias;
+
+      container.innerHTML += `
         <div class="skills-bloque">
           <h3>${categoria.categoria}</h3>
+
           <div class="skills-track">
-            ${categoria.tecnologias
-              .map(t => `<img src="${t.badge}" alt="${t.nombre}" class="skill">`)
-              .join('')}
+            ${tecnologias.map(tecnologia => `
+              <img
+                src="${tecnologia.badge}"
+                alt="${tecnologia.nombre}"
+                class="skill"
+              >
+            `).join('')}
           </div>
         </div>
-      `).join('');
+      `;
+    });
+
   } catch (error) {
-    console.error('Error al cargar las habilidades:', error);
+    console.error('Error cargando las habilidades:', error);
   }
 }
 
-/* ---------- PROYECTOS ---------- */
+
+// -------------------- PROYECTOS --------------------
+
 async function initProyectos() {
   const filtroSelect = document.getElementById('filtroLenguaje');
   const contenedor = document.getElementById('proyectos-container');
   const mensajeVacio = document.getElementById('mensaje-vacio');
+
   if (!filtroSelect || !contenedor) return;
 
-  let proyectos = [];
   try {
-    proyectos = await fetchJSON('data/proyectos.json');
-  } catch (error) {
-    console.error(error);
-    return;
-  }
+    const proyectos = await fetchJSON('data/proyectos.json');
 
-  // Extraer categorías únicas para el filtro
-  const categorias = [...new Set(proyectos.map(p => p.categoria))].sort();
+    // Crear las opciones del filtro
+    const categorias = [...new Set(proyectos.map(p => p.categoria))].sort();
 
-  filtroSelect.insertAdjacentHTML(
-    'beforeend',
-    categorias.map(c => `<option value="${c}">${c}</option>`).join('')
-  );
+    filtroSelect.innerHTML = '<option value="todos">Todos</option>';
 
-  renderProyectos = () => {
-    const filtro = filtroSelect.value;
-    const lista = filtro === 'todos'
-      ? proyectos
-      : proyectos.filter(p => p.categoria === filtro);
+    categorias.forEach(categoria => {
+      filtroSelect.innerHTML += `
+        <option value="${categoria}">${categoria}</option>
+      `;
+    });
 
-    mensajeVacio.classList.toggle('oculto', lista.length > 0);
+    // Mostrar los proyectos
+    renderProyectos = function() {
+      const filtro = filtroSelect.value;
 
-    contenedor.innerHTML = lista.map(p => {
-      const desc = traducir(p.descripcionKey, p.descripcionFallback);
-      const estado = traducir(p.estadoKey, p.estadoFallback);
-      const esConstruccion = p.estadoTipo === 'construccion';
+      const lista = filtro === 'todos'
+        ? proyectos
+        : proyectos.filter(p => p.categoria === filtro);
 
-      return `
-      <div class="proyecto${esConstruccion ? ' proyecto-construccion' : ''}">
-        <div>
-          <h3>
-            ${p.nombre}
-            <span class="badge-estado badge-${p.estadoTipo}">${estado}</span>
-          </h3>
-          <p>${desc}</p>
-          <div class="tags-container">
-            ${p.tecnologias.map(t =>
-              `<img src="${t.badge}" alt="${t.nombre}" class="badge-tech">`
-            ).join('')}
+      if (mensajeVacio) {
+        mensajeVacio.classList.toggle('oculto', lista.length > 0);
+      }
+
+      contenedor.innerHTML = lista.map(proyecto => {
+        const descripcion = traducir(
+          proyecto.descripcionKey,
+          proyecto.descripcionFallback
+        );
+
+        const estado = traducir(
+          proyecto.estadoKey,
+          proyecto.estadoFallback
+        );
+
+        const construccion = proyecto.estadoTipo === 'construccion';
+
+        return `
+          <div class="proyecto ${construccion ? 'proyecto-construccion' : ''}">
+            <div>
+              <h3>
+                ${proyecto.nombre}
+                <span class="badge-estado badge-${proyecto.estadoTipo}">
+                  ${estado}
+                </span>
+              </h3>
+
+              <p>${descripcion}</p>
+
+              <div class="tags-container">
+                ${proyecto.tecnologias.map(tecnologia => `
+                  <img
+                    src="${tecnologia.badge}"
+                    alt="${tecnologia.nombre}"
+                    class="badge-tech"
+                  >
+                `).join('')}
+              </div>
+            </div>
+
+            <a href="${proyecto.githubUrl}" target="_blank" rel="noopener noreferrer">
+              GitHub →
+            </a>
           </div>
-        </div>
-        <a href="${p.githubUrl}" target="_blank" rel="noopener noreferrer">GitHub →</a>
-      </div>`;
-    }).join('');
-  };
+        `;
+      }).join('');
+    };
 
-  filtroSelect.addEventListener('change', renderProyectos);
-  renderProyectos();
+    filtroSelect.addEventListener('change', renderProyectos);
+
+    renderProyectos();
+
+  } catch (error) {
+    console.error('Error cargando los proyectos:', error);
+  }
 }
 
-/* ---------- INIT ---------- */
-document.addEventListener('DOMContentLoaded', async () => {
-  await initIdioma();       // primero idiomas, para que traducir() funcione
-  await initProyectos();    // luego proyectos que usan traducir()
-  loadSkills();
+
+// -------------------- INICIO --------------------
+
+document.addEventListener('DOMContentLoaded', async function() {
+  await initIdioma();
+  await initProyectos();
+  await loadSkills();
 });
